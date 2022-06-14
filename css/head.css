@@ -1,0 +1,71 @@
+/* 页眉 */
+.header{
+    height: 80px;
+    background-color: #FFFF;
+    border-bottom: 1px solid #ccc;
+}
+
+.head-ul{
+    padding-top: 20px;
+}
+.head-img{
+    border-right: 1px solid #ccc;
+    height: 80px;
+}
+.head-ul{
+    padding-left: 80px;
+    padding-top: 20px;
+    font-size: 20px;
+}
+
+
+
+
+
+.head-ul ul li a::after{
+    width:100%;
+   
+}
+
+
+.right { 
+    height: 80px;
+}
+.ul-wx{
+    display: none;
+    position: fixed;
+    top: 85px;
+    left: 1025px;
+    z-index: 99;
+
+}
+.ul-hide{
+    display: none;
+}
+	/*先把a的原有下划线样式给清除*/
+    a,a:link,a:visited,a:focus{
+        text-decoration:none;color:#000;
+    }
+    /*设置a的定位，给我们自己编写的下划线一个定位参考*/
+    .left-to-right{
+        position:relative;
+        margin-left: 20px;
+      
+    }
+    /*使用伪类给a下面添加下划线*/
+    .left-to-right::after{
+        content:'';
+        display:block;
+        /*开始时候下划线的宽度为0*/
+        width:0;
+        height:3px;
+        position:absolute;
+        left:0;
+        bottom:-10px;
+        background:#000;
+        /*这里我们设定所有改变都有动画效果，可以自己指定样式才有动画效果*/
+        transition:all 0.3s ease-in-out;
+    }
+    .left-to-right:hover::after{
+        width:100%;
+    }
